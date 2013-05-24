@@ -1,0 +1,7 @@
+loyko_max_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: LoykoMaxBundle:Default:index }
+
+book_new:
+    pattern:  /book/add
+    defaults: { _controller: LoykoMaxBundle:Book:new }

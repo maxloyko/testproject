@@ -1,0 +1,4 @@
+loyko_max:
+    resource: "@LoykoMaxBundle/Resources/config/routing.yml"
+    prefix:   /
+
