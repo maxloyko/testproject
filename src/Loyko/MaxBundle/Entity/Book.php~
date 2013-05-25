@@ -53,10 +53,6 @@ class Book
          */
     private $authors;
 
-    public function __toString()
-    {
-        return (string)$this->getTitle();
-    }
     /**
      * Get id
      *
@@ -144,46 +140,5 @@ class Book
     public function getAuthors()
     {
         return $this->authors;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->authors = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-    
-    /**
-     * Add tags
-     *
-     * @param \Loyko\MaxBundle\Entity\Tag $tags
-     * @return Book
-     */
-    public function addTag(\Loyko\MaxBundle\Entity\Tag $tags)
-    {
-        $this->tags[] = $tags;
-    
-        return $this;
-    }
-
-    /**
-     * Remove tags
-     *
-     * @param \Loyko\MaxBundle\Entity\Tag $tags
-     */
-    public function removeTag(\Loyko\MaxBundle\Entity\Tag $tags)
-    {
-        $this->tags->removeElement($tags);
-    }
-
-    /**
-     * Get tags
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getTags()
-    {
-        return $this->tags;
     }
 }

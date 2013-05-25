@@ -1,0 +1,43 @@
+services:
+    sonata.admin.book:
+        class: Loyko\MaxBundle\Admin\BookAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Book, label: "Book" }
+        arguments:
+            - ~
+            - Loyko\MaxBundle\Entity\Book
+            - 'SonataAdminBundle:CRUD'
+        #calls:
+        #    - [ setTranslationDomain, [YourNSAdminBundle]]
+    sonata.admin.author:
+        class: Loyko\MaxBundle\Admin\AuthorAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Book, label: "Auhtor" , show_in_dashboard:true }
+        arguments:
+            - ~
+            - Loyko\MaxBundle\Entity\Author
+            - 'SonataAdminBundle:CRUD'
+    sonata.admin.tag:
+        class: Loyko\MaxBundle\Admin\TagAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Tag, label: "Tag" }
+        arguments:
+            - ~
+            - Loyko\MaxBundle\Entity\Tag
+            - 'SonataAdminBundle:CRUD'
+    sonata.admin.film:
+        class: Loyko\MaxBundle\Admin\FilmAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Film, label: "Film" }
+        arguments:
+            - ~
+            - Loyko\MaxBundle\Entity\Film
+            - 'SonataAdminBundle:CRUD'
+    sonata.admin.actor:
+        class: Loyko\MaxBundle\Admin\ActorAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Film, label: "Actor", show_in_dashboard:true }
+        arguments:
+            - ~
+            - Loyko\MaxBundle\Entity\Actor
+            - 'SonataAdminBundle:CRUD'

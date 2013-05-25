@@ -28,7 +28,10 @@ class Actor
      */
     private $name;
 
-
+    public function __toString()
+    {
+        return (string)$this->getName();
+    }
     /**
      * Get id
      *

@@ -5,12 +5,12 @@ namespace Loyko\MaxBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Tag
+ * Actor
  *
  * @ORM\Table()
  * @ORM\Entity
  */
-class Tag
+class Actor
 {
     /**
      * @var integer
@@ -28,10 +28,13 @@ class Tag
      */
     private $name;
 
-    public function __toString()
-    {
-        return (string)$this->getName();
-    }
+    /**
+     * @ORM\ManyToOne(targetEntity="Loyko\MaxBundle\Entity\Film", inversedBy="tags")
+     * @ORM\JoinColumn(name="film_id", referencedColumnName="id")
+     */
+    private $film;
+
+
     /**
      * Get id
      *
@@ -46,7 +49,7 @@ class Tag
      * Set name
      *
      * @param string $name
-     * @return Tag
+     * @return Actor
      */
     public function setName($name)
     {

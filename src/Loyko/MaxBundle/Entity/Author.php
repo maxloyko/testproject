@@ -28,6 +28,10 @@ class Author
      */
     private $name;
 
+    public function __toString()
+    {
+        return (string)$this->getName();
+    }
 
     /**
      * Get id
@@ -59,10 +63,6 @@ class Author
      */
     public function getName()
     {
-        return $this->name;
-    }
-    
-        public function __toString() {
         return $this->name;
     }
 }

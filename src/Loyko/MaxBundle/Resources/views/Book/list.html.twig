@@ -1,0 +1,6 @@
+<h1>List Books</h1>
+<ul>
+    {% for book in books %}
+        <li><a href="{{ path('book_edit', {'title': book.title}) }}">{{ book.title|e }}</li>
+    {% endfor %}
+</ul>

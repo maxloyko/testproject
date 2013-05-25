@@ -28,10 +28,19 @@ class Tag
      */
     private $name;
 
-    public function __toString()
-    {
-        return (string)$this->getName();
-    }
+    /**
+     * @ORM\ManyToOne(targetEntity="Loyko\MaxBundle\Entity\Book", inversedBy="tags")
+     * @ORM\JoinColumn(name="book_id", referencedColumnName="id")
+     */
+    private $book;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Loyko\MaxBundle\Entity\Book", inversedBy="tags")
+     * @ORM\JoinColumn(name="book_id", referencedColumnName="id")
+     */
+    private $film;
+
+
     /**
      * Get id
      *
@@ -63,5 +72,32 @@ class Tag
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set book
+     *
+     * @param \Loyko\MaxBundle\Entity\Book $book
+     * @return Tag
+     */
+    public function setBook(\Loyko\MaxBundle\Entity\Book $book = null)
+    {
+        $this->book = $book;
+    
+        return $this;
+    }
+
+    /**
+     * Get book
+     *
+     * @return \Loyko\MaxBundle\Entity\Book 
+     */
+    public function getBook()
+    {
+        return $this->book;
+    }
+
+    public function __toString() {
+        return ($this->name) ? $this->name : '' ;
     }
 }

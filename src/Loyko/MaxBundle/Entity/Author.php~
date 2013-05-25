@@ -5,12 +5,12 @@ namespace Loyko\MaxBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Tag
+ * Author
  *
  * @ORM\Table()
  * @ORM\Entity
  */
-class Tag
+class Author
 {
     /**
      * @var integer
@@ -28,10 +28,6 @@ class Tag
      */
     private $name;
 
-    public function __toString()
-    {
-        return (string)$this->getName();
-    }
     /**
      * Get id
      *
@@ -46,7 +42,7 @@ class Tag
      * Set name
      *
      * @param string $name
-     * @return Tag
+     * @return Author
      */
     public function setName($name)
     {
@@ -64,4 +60,22 @@ class Tag
     {
         return $this->name;
     }
+    
+        public function __toString() {
+        return $this->name;
+    }
+
+    /**
+     * Set book
+     *
+     * @param \Loyko\MaxBundle\Entity\Book $book
+     * @return Author
+     */
+    public function setBook(\Loyko\MaxBundle\Entity\Book $book = null)
+    {
+        $this->book = $book;
+    
+        return $this;
+    }
+
 }

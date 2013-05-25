@@ -60,10 +60,6 @@ class Film
      */
     private $tags;
 
-    public function __toString()
-    {
-        return (string)$this->getTitle();
-    }
 
     /**
      * Get id
@@ -184,38 +180,5 @@ class Film
     public function getActors()
     {
         return $this->actors;
-    }
-
-    /**
-     * Add tags
-     *
-     * @param \Loyko\MaxBundle\Entity\Tag $tags
-     * @return Film
-     */
-    public function addTag(\Loyko\MaxBundle\Entity\Tag $tags)
-    {
-        $this->tags[] = $tags;
-    
-        return $this;
-    }
-
-    /**
-     * Remove tags
-     *
-     * @param \Loyko\MaxBundle\Entity\Tag $tags
-     */
-    public function removeTag(\Loyko\MaxBundle\Entity\Tag $tags)
-    {
-        $this->tags->removeElement($tags);
-    }
-
-    /**
-     * Get tags
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getTags()
-    {
-        return $this->tags;
     }
 }
